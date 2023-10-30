@@ -1,0 +1,35 @@
+.forest {
+    display: inline;    
+}
+
+.forest:hover path {
+    fill: var(--hover-bg-color);
+    opacity: 50%;
+}
+
+.rain {
+    display: inline;    
+}
+
+.rain:hover path {
+    fill: var(--hover-bg-color);
+    opacity: 50%;
+}
+
+.coffeshop {
+    display: inline;    
+}
+
+.coffeshop:hover path {
+    fill: var(--hover-bg-color);
+    opacity: 50%;
+}
+
+.fire {
+    display: inline;    
+}
+
+.fire:hover path {
+    fill: var(--hover-bg-color);
+    opacity: 50%;
+}
