@@ -36,8 +36,19 @@ main {
 }
 
 .controls button{
-    width: 80px;
-    height: 30px;
+    width: 100px;
+    height: 50px;
+    font-size: 3rem;
+    background: #c4bfb6;
+    opacity: 90%;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.controls button:hover {
+    background: var(--hover-bg-color);
+    opacity: 50%;
 }
 
 .sr-only {
@@ -48,13 +59,18 @@ main {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+    
 }
 
 .cards button {
     border-radius: 20px;
     border: none;
     background: var(--bg-color);
+    cursor: pointer;
 }
 
-
+iframe {
+    width: 20px;
+    height: 20px;
+}
 

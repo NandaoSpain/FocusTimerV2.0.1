@@ -3,6 +3,7 @@ import state from "./state.js"
 const controls = document.querySelector('.controls')
 const min = document.querySelector('.minutes')
 const sec = document.querySelector('.seconds')
+const cards = document.querySelector('.cards')
 
 start(5, 0)
 
@@ -33,6 +34,7 @@ function start(minutes, seconds) {
     state.seconds = seconds
     updateDisplay()
     registerControls()
+    registerCards()
 }
 
 function stop() {
@@ -83,4 +85,37 @@ function countdown() {
     }
     state.countdownId = setTimeout(() => {countdown()},1000)
     updateDisplay(minutes, seconds)
+}
+
+function registerCards() {
+    cards.addEventListener('click', (e) => {
+        if(e.target.classList.contains('forest')) {
+            let audio = document.querySelector('.forest-music')
+            audio.pause();
+            audio.currentTime = 0
+            audio.play()
+        }
+
+        if(e.target.classList.contains('rain')) {
+            let audio = document.querySelector('.rain-music')
+            audio.pause();
+            audio.currentTime = 0
+            audio.play()
+        }
+
+        if(e.target.classList.contains('coffeshop')) {
+            let audio = document.querySelector('.coffeshop-music')
+            audio.pause();
+            audio.currentTime = 0
+            audio.play()
+        }
+
+        if(e.target.classList.contains('fire')) {
+            let audio = document.querySelector('.fire-music')
+            audio.pause();
+            audio.currentTime = 0
+            audio.play()
+        }
+    })
+    
 }
