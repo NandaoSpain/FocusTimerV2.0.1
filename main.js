@@ -91,31 +91,52 @@ function registerCards() {
     cards.addEventListener('click', (e) => {
         if(e.target.classList.contains('forest')) {
             let audio = document.querySelector('.forest-music')
-            audio.pause();
-            audio.currentTime = 0
-            audio.play()
+            state.isMute = document.documentElement.classList.toggle('music-on')
+            if(state.isMute == false) {
+                audio.pause()
+            }
+            if(state.isMute == true) {
+                audio.play()
+                console.log(state)
+            }
         }
 
         if(e.target.classList.contains('rain')) {
             let audio = document.querySelector('.rain-music')
-            audio.pause();
-            audio.currentTime = 0
-            audio.play()
+            state.isMute = document.documentElement.classList.toggle('music-on')
+            if(state.isMute == false) {
+                audio.pause()
+            }
+            if(state.isMute == true) {
+                audio.play()
+                console.log(state)
+            }
         }
 
         if(e.target.classList.contains('coffeshop')) {
             let audio = document.querySelector('.coffeshop-music')
-            audio.pause();
-            audio.currentTime = 0
-            audio.play()
+            state.isMute = document.documentElement.classList.toggle('music-on')
+            if(state.isMute == false) {
+                audio.pause()
+            }
+            if(state.isMute == true) {
+                audio.play()
+                console.log(state)
+            }
         }
 
         if(e.target.classList.contains('fire')) {
             let audio = document.querySelector('.fire-music')
-            audio.pause();
-            audio.currentTime = 0
-            audio.play()
+            state.isMute = document.documentElement.classList.toggle('music-on')
+            if(state.isMute == false) {
+                audio.pause()
+            }
+            if(state.isMute == true) {
+                audio.play()
+                console.log(state)
+            }
         }
     })
     
 }
+
