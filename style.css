@@ -8,7 +8,6 @@
 :root {
     --bg-color: #EEEAE3;
     --text-color: #3C402B;
-
     --hover-bg-color:#3C402B;
     font-size: clamp(40%, 1% + 2vw, 62.5%);
 }
