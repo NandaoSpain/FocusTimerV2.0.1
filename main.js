@@ -4,12 +4,26 @@ const controls = document.querySelector('.controls')
 const min = document.querySelector('.minutes')
 const sec = document.querySelector('.seconds')
 
-start(1, 6)
+start(5, 0)
 
 function registerControls() {
     controls.addEventListener('click', (e) => {
     if(e.target.classList.contains('play')){
+        state.isRunning = true
         countdown()
+    }
+
+    if(e.target.classList.contains('stop')){
+        updateDisplay(state.minutes, state.seconds)
+        stop()
+    }
+
+    if(e.target.classList.contains('plus')) {
+        plus()
+    }
+
+    if(e.target.classList.contains('minus')){
+        minus()
     }
 })
 }
@@ -21,6 +35,25 @@ function start(minutes, seconds) {
     registerControls()
 }
 
+function stop() {
+    state.isRunning = false
+    countdown()
+}
+
+function plus() {
+    state.minutes = state.minutes + 5
+    updateDisplay()
+}
+
+function minus() {
+    if(state.minutes > 0){
+        state.minutes = state.minutes - 5 
+    } else {
+        state.minutes = 5
+    }
+    updateDisplay()
+}
+
 function updateDisplay(minutes, seconds) {
     minutes = minutes ?? state.minutes
     seconds = seconds ?? state.seconds
@@ -29,9 +62,13 @@ function updateDisplay(minutes, seconds) {
     sec.textContent = String(seconds).padStart(2, '0')
 }
 
+
 function countdown() {
+    if(!state.isRunning){
+        return
+    }
     clearTimeout(state.countdownId)
-    
+
     let minutes = Number(min.textContent)
     let seconds = Number(sec.textContent)
     
